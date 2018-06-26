@@ -6,8 +6,8 @@ test: bin/cal_test
 bin/calendar: build/main.o build/isLeap.o build/year.o build/month.o build/week.o
 	gcc -Wall -Werror build/main.o build/isLeap.o build/year.o build/month.o build/week.o -o bin/calendar
 
-bin/cal_test: build/main_test.o
-	gcc -Wall -Werror build/main_test.o -o bin/cal_test
+bin/cal_test: build/main_test.o build/isLeap.o
+	gcc -Wall -Werror build/main_test.o build/isLeap.o -o bin/cal_test
 
 build/main.o: src/main.c
 	gcc -std=c99 -Wall -Werror -c src/main.c -o build/main.o

@@ -1,23 +1,7 @@
 #define CTEST_MAIN
 
 #include <ctest.h>
-#include <stdbool.h>
-
-bool isLeap(int year)
-{
-	if(year % 4 == 0)
-		{
-			if(year % 100 == 0)
-			{
-				if(year % 400 == 0)
-					return true;
-				else return false;
-			}
-			else
-				return true;
-		}
-	return false;
-}
+#include "calendar.h"
 
 CTEST(leap_year_check, correct_leap_year_check)
 {
